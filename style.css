@@ -1,0 +1,33 @@
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+}
+
+.video-container {
+    position: relative;
+    text-align: center;
+}
+
+video {
+    width: 400px; /* Adjust the size as needed */
+    height: auto;
+}
+
+.hidden {
+    display: none;
+}
+
+#birthday-message {
+    background-color: #ffcc00;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    font-size: 2rem;
+    color: white;
+}
