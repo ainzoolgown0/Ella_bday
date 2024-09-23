@@ -1,7 +1,6 @@
 // Function to handle the microphone input and blow detection
 async function init() {
-    const candleLoop = document.getElementById('candle-loop'); // First video (looping candle)
-    const candleBlow = document.getElementById('candle-blow'); // Second video (blowout)
+    const birthdayVideo = document.getElementById('birthday-video');
     const birthdayMessage = document.getElementById('birthday-message');
 
     try {
@@ -20,14 +19,12 @@ async function init() {
 
             // When blow is detected (adjust threshold as needed)
             if (maxVolume > 150) {
-                // Stop the looping video and show the blowout video
-                candleLoop.classList.add('hidden');
-                candleBlow.classList.remove('hidden');
-                candleBlow.play();
+                birthdayVideo.classList.remove('hidden'); // Show the video
+                birthdayVideo.play(); // Play the video
 
-                // After the blowout video ends, show the Happy Birthday message
-                candleBlow.onended = () => {
-                    candleBlow.classList.add('hidden'); // Hide the blowout video
+                // After the video ends, show the Happy Birthday message
+                birthdayVideo.onended = () => {
+                    birthdayVideo.classList.add('hidden'); // Hide the video
                     birthdayMessage.classList.remove('hidden'); // Show Happy Birthday message
                 };
             }
